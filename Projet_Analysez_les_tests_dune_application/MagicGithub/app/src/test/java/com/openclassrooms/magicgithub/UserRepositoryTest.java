@@ -43,7 +43,7 @@ public class UserRepositoryTest {
         userRepository.getUsers().clear();
         userRepository.generateRandomUser();
         User user = userRepository.getUsers().get(0);
-        assertEquals(1, userRepository.getUsers().size());
+        assertEquals(1, userRepository.getUsers().size()); //vérifie si la liste a un seul utilisateur
         assertTrue(FAKE_USERS_RANDOM.stream().map(User::getAvatarUrl).collect(Collectors.toList()).contains(user.getAvatarUrl()));
         assertTrue(FAKE_USERS_RANDOM.stream().map(User::getId).collect(Collectors.toList()).contains(user.getId()));
         assertTrue(FAKE_USERS_RANDOM.stream().map(User::getLogin).collect(Collectors.toList()).contains(user.getLogin()));
